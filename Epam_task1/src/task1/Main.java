@@ -1,77 +1,81 @@
+
 package task1;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-import ElectricAppliances.AlarmClock;
-import ElectricAppliances.Dishwasher;
-import ElectricAppliances.ElectricAppliance;
-import ElectricAppliances.Fridge;
-import ElectricAppliances.Kettle;
-import ElectricAppliances.Lamp;
-import ElectricAppliances.Microwave;
-import ElectricAppliances.MicrowaveMode;
+import task1.appliances.AlarmClock;
+import task1.appliances.Dishwasher;
+import task1.appliances.ElectricAppliance;
+import task1.appliances.Fridge;
+import task1.appliances.Kettle;
+import task1.appliances.Lamp;
+import task1.appliances.Microwave;
+import task1.appliances.MicrowaveMode;
 
 public class Main {
 
 	public static void main(String[] args) {
-		ArrayList<ElectricAppliance> Appliances = new ArrayList<>();
+		ArrayList<ElectricAppliance> appliances = new ArrayList<>();
 		Scanner scanner = new Scanner(System.in);
-		CalculateUsage calculate = new CalculateUsage();
-		Filter filter = new Filter();
 
 		Microwave microwave = new Microwave();
 		microwave.setId(1);
 		microwave.setSwitchedOn(true);
 		microwave.setPower(1500);
 		microwave.setMode(MicrowaveMode.DEFROST);
-		Appliances.add(microwave);
+		appliances.add(microwave);
 
 		Kettle kettle = new Kettle(2.5, true);
 		kettle.setId(2);
 		kettle.setPower(1200);
 		kettle.setSwitchedOn(false);
 		kettle.turnOn();
-		Appliances.add(kettle);
+		appliances.add(kettle);
 
 		Dishwasher dishwasher = new Dishwasher();
 		dishwasher.setId(3);
 		dishwasher.setPower(3500);
 		dishwasher.setOperationVolume(2.2);
 		dishwasher.setSwitchedOn(false);
-		Appliances.add(dishwasher);
+		appliances.add(dishwasher);
 
 		AlarmClock alarmclock = new AlarmClock("Black");
 		alarmclock.setId(4);
 		alarmclock.setPower(5);
 		alarmclock.setSwitchedOn(true);
 		alarmclock.turnOff();
-		Appliances.add(alarmclock);
+		appliances.add(alarmclock);
 
 		Fridge fridge = new Fridge(true);
 		fridge.setId(5);
 		fridge.setPower(200);
 		fridge.setSwitchedOn(true);
-		Appliances.add(fridge);
+		appliances.add(fridge);
 
 		Lamp lamp = new Lamp();
 		lamp.setId(6);
 		lamp.setPower(60);
 		lamp.setSwitchedOn(false);
 		lamp.turnOn();
-		Appliances.add(lamp);
+		appliances.add(lamp);
 
-		System.out.println(Appliances);
-		System.out.println("Calculated power usage: " + (calculate.CalculateUsageOfPower(Appliances)) + " Watt");
-		Collections.sort(Appliances, new ElectricApplianceComparator());
-		System.out.println(Appliances);
-		System.out.println("Enter search range (from a to b)");
-		double a = scanner.nextDouble();
-		double b = scanner.nextDouble();
+		for (ElectricAppliance appliance : appliances) {
+			System.out.println(appliance);
+		}
+		System.out.println("Calculated power usage: " + (CalculateUsage.calculatePowerUsage(appliances)) + " Watt");
+		Collections.sort(appliances, new ElectricApplianceComparator());
+		for (ElectricAppliance appliance : appliances) {
+			System.out.println(appliance);
+		}
+		System.out.println("Enter search range (from min to max)");
+		double minPower = scanner.nextDouble();
+		double maxPower = scanner.nextDouble();
 		scanner.close();
-		System.out.println("Result: \n" + filter.FilterByPower(Appliances, a, b));
-
+		for (ElectricAppliance appliance : Filter.filterByPower(appliances, minPower, maxPower)) {
+			System.out.println(appliance);
+		}
 	}
 
 }

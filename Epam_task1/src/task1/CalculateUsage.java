@@ -1,16 +1,17 @@
+
 package task1;
 
 import java.util.ArrayList;
 
-import ElectricAppliances.ElectricAppliance;
+import task1.appliances.ElectricAppliance;
 
 public class CalculateUsage {
 	
-	public double CalculateUsageOfPower(ArrayList<ElectricAppliance> List) {
+	public static double calculatePowerUsage(ArrayList<ElectricAppliance> appliances) {
 		double result = 0;
-		for (ElectricAppliance x : List) {
-			if (x.isSwitchedOn()) {
-				result += x.getPower();
+		for (ElectricAppliance appliance : appliances) {
+			if (appliance.isSwitchedOn()) {
+				result += appliance.getPower();
 			}
 		}
 		return result;

@@ -1,14 +1,15 @@
+
 package task1;
 
 import java.util.ArrayList;
 
-import ElectricAppliances.ElectricAppliance;
+import task1.appliances.ElectricAppliance;
 
 public class Filter {
-	public ArrayList<ElectricAppliance> FilterByPower(ArrayList<ElectricAppliance> Appliances, double a, double b){
+	public static ArrayList<ElectricAppliance> filterByPower(ArrayList<ElectricAppliance> appliances, double minPower, double maxPower){
 		ArrayList<ElectricAppliance> List = new ArrayList<>();
-		for (ElectricAppliance x : Appliances) {
-			if (x.getPower() >= a && x.getPower() <= b) {
+		for (ElectricAppliance x : appliances) {
+			if (x.getPower() >= minPower && x.getPower() <= maxPower) {
 				List.add(x);
 			}
 		}

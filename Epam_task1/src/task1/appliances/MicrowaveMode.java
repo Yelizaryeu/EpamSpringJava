@@ -1,4 +1,5 @@
-package ElectricAppliances;
+
+package task1.appliances;
 
 public enum MicrowaveMode {
 	DEFROST,

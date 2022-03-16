@@ -1,8 +1,9 @@
+
 package task1;
 
 import java.util.Comparator;
 
-import ElectricAppliances.ElectricAppliance;
+import task1.appliances.ElectricAppliance;
 
 public class ElectricApplianceComparator implements Comparator<ElectricAppliance> {
 

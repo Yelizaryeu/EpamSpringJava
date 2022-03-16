@@ -1,4 +1,5 @@
-package ElectricAppliances;
+
+package task1.appliances;
 
 abstract public class ElectricAppliance {
 	private String name;
@@ -48,21 +49,19 @@ abstract public class ElectricAppliance {
 		this.switchedOn = switchedOn;
 	}
 
-	public abstract String getSourceOfPower();
+	public abstract SourcePower getSourcePower();
 
 	public String getType() {
 		return type;
 	}
-		
+
 	@Override
-    public String toString() {
-        return "\n\tid = " + id
-        		+ ",\n\tAppliance = " + name
-                + ",\n\ttype = " + type
-                + ",\n\tpower = " + power + " Watt"
-                + ",\n\tTurnedOn = " + switchedOn
-                + "\n";
-    }
+	public String toString() {
+		return "[id=" + id + ", name=" + name + ", type=" + type + ", power=" + power
+				+ ", switchedOn=" + switchedOn + "]";
+	}
+		
+	
 		
 	}
 

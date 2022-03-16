@@ -1,4 +1,5 @@
-package ElectricAppliances;
+
+package task1.appliances;
 
 abstract public class MajorAppliance extends ElectricAppliance {
 
@@ -7,9 +8,7 @@ abstract public class MajorAppliance extends ElectricAppliance {
 	}
 	
 	@Override
-	public String getSourceOfPower() {
-		return "plug";
+	public SourcePower getSourcePower() {
+		return SourcePower.PLUG;
 	}
-	
-
 }

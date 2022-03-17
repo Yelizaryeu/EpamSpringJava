@@ -2,6 +2,7 @@
 package task1.appliances;
 
 abstract public class ElectricAppliance {
+	
 	private String name;
 	private int id;
 	private String type;
@@ -60,9 +61,4 @@ abstract public class ElectricAppliance {
 		return "[id=" + id + ", name=" + name + ", type=" + type + ", power=" + power
 				+ ", switchedOn=" + switchedOn + "]";
 	}
-		
-	
-		
-	}
-
-	
+}

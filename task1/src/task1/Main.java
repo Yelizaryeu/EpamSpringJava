@@ -3,6 +3,7 @@ package task1;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 import task1.appliances.AlarmClock;
@@ -17,8 +18,8 @@ import task1.appliances.MicrowaveMode;
 public class Main {
 
 	public static void main(String[] args) {
-		ArrayList<ElectricAppliance> appliances = new ArrayList<>();
-		Scanner scanner = new Scanner(System.in);
+		
+		List<ElectricAppliance> appliances = new ArrayList<>();
 
 		Microwave microwave = new Microwave();
 		microwave.setId(1);
@@ -61,21 +62,27 @@ public class Main {
 		lamp.turnOn();
 		appliances.add(lamp);
 
+		System.out.println("Available appliances:");
 		for (ElectricAppliance appliance : appliances) {
 			System.out.println(appliance);
 		}
-		System.out.println("Calculated power usage: " + (CalculateUsage.calculatePowerUsage(appliances)) + " Watt");
+		System.out.printf("Calculated power usage: %d Watt%n",(CalculateUsage.calculatePowerUsage(appliances)));
 		Collections.sort(appliances, new ElectricApplianceComparator());
+		
+		System.out.println("Appliances sorted by power:");
 		for (ElectricAppliance appliance : appliances) {
 			System.out.println(appliance);
 		}
-		System.out.println("Enter search range (from min to max)");
+		
+		System.out.println("Enter search power range (from minimum to maximum)");
+		Scanner scanner = new Scanner(System.in);
 		double minPower = scanner.nextDouble();
 		double maxPower = scanner.nextDouble();
 		scanner.close();
+		
+		System.out.println("Appliances in specified power range:");
 		for (ElectricAppliance appliance : Filter.filterByPower(appliances, minPower, maxPower)) {
 			System.out.println(appliance);
 		}
 	}
-
 }

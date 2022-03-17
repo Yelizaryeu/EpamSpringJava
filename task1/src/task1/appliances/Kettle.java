@@ -31,7 +31,4 @@ public class Kettle extends SmallAppliance {
 				+ getPower() + ", isSwitchedOn()=" + isSwitchedOn() + ", getSourcePower()=" + getSourcePower()
 				+ ", capacity=" + capacity + ", hasBacklight=" + hasBacklight + "]";
 	}
-	
-	
-
 }

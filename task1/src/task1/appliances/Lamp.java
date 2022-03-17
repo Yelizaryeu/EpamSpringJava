@@ -20,7 +20,7 @@ public class Lamp extends SmallAppliance{
 
 	public void setBrightness(int brightness) {
 		if (brightness >= 0 && brightness <= 100) {
-		this.brightness = brightness;
+			this.brightness = brightness;
 		} else {
 			brightness = 0;
 		}
@@ -32,7 +32,4 @@ public class Lamp extends SmallAppliance{
 				+ getPower() + ", isSwitchedOn()=" + isSwitchedOn() + ", getSourcePower()=" + getSourcePower()
 				+ ", brightness=" + brightness + "]";
 	}
-	
-	
-	
 }

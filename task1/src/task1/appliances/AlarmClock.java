@@ -25,8 +25,4 @@ public class AlarmClock extends SmallAppliance {
 				+ ", getPower()=" + getPower() + ", isSwitchedOn()=" + isSwitchedOn() + ", getSourcePower()="
 				+ getSourcePower() + ", color=" + color + "]";
 	}
-
-	
-
-	
 }

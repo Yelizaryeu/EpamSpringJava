@@ -1,10 +1,10 @@
 
 package task1.appliances;
 
-abstract public class MajorAppliance extends ElectricAppliance {
+abstract class MajorAppliance extends ElectricAppliance {
 
 	public MajorAppliance() {
-		super("major");
+		super("Major");
 	}
 	
 	@Override

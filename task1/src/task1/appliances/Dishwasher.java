@@ -1,26 +1,28 @@
-
 package task1.appliances;
 
-public class Dishwasher extends MajorAppliance{
-	
-	private double operationVolume;
-	
-	public Dishwasher() {
-		this.setAppliance("Dishwasher");
-	}
+public class Dishwasher extends MajorAppliance {
 
-	public double getOperationVolume() {
-		return operationVolume;
-	}
+    private final double operationVolume;
 
-	public void setOperationVolume(double operationVolume) {
-		this.operationVolume = operationVolume;
-	}
+    public Dishwasher(double operationVolume) {
+        this.setAppliance("Dishwasher");
+        this.operationVolume = operationVolume;
+    }
 
-	@Override
-	public String toString() {
-		return "Appliance info [getId()=" + getId() + ", getName()=" + getName() + ", getType()=" + getType()
-				+ ", getPower()=" + getPower() + ", getSourcePower()=" + getSourcePower() + ", isSwitchedOn()="
-				+ isSwitchedOn() + ", OperationVolume=" + operationVolume + "]";
-	}
+    public double getOperationVolume() {
+        return operationVolume;
+    }
+
+    @Override
+    public String toString() {
+        return "Dishwasher{" +
+                " name='" + getName() + '\'' +
+                ", id=" + getId() +
+                ", power=" + getPower() +
+                ", switchedOn=" + isSwitchedOn() +
+                ", type='" + getType() + '\'' +
+                "operationVolume=" + operationVolume +
+                ", sourcePower=" + getSourcePower() +
+                '}';
+    }
 }

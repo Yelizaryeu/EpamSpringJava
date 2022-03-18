@@ -1,23 +1,28 @@
-
 package task1.appliances;
 
-public class Fridge extends MajorAppliance{
-	
-	private final boolean hasFreezer;
-	
-	public Fridge(boolean hasFreezer) {
-		this.setAppliance("Fridge");
-		this.hasFreezer = hasFreezer;
-	}
+public class Fridge extends MajorAppliance {
 
-	public boolean isHasFreezer() {
-		return hasFreezer;
-	}
+    private final boolean hasFreezer;
 
-	@Override
-	public String toString() {
-		return "Appliance info [getId()=" + getId() + ", getName()=" + getName() + ", getType()=" + getType() + ", getPower()="
-				+ getPower() + ", getSourcePower()=" + getSourcePower() + ", isSwitchedOn()=" + isSwitchedOn()
-				+ ", HasFreezer=" + hasFreezer + "]";
-	}
+    public Fridge(boolean hasFreezer) {
+        this.setAppliance("Fridge");
+        this.hasFreezer = hasFreezer;
+    }
+
+    public boolean isHasFreezer() {
+        return hasFreezer;
+    }
+
+    @Override
+    public String toString() {
+        return "Fridge{" +
+                "name='" + getName() + '\'' +
+                ", id=" + getId() +
+                ", power=" + getPower() +
+                ", switchedOn=" + isSwitchedOn() +
+                ", type='" + getType() + '\'' +
+                ", hasFreezer=" + hasFreezer +
+                ", sourcePower=" + getSourcePower() +
+                '}';
+    }
 }

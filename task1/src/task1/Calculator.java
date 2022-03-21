@@ -6,6 +6,8 @@ import java.util.List;
 
 public class Calculator {
 
+    private Calculator(){};
+
     public static int calculatePower(List<ElectricAppliance> appliances) {
         int result = 0;
         for (ElectricAppliance appliance : appliances) {

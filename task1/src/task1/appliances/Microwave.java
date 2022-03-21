@@ -2,7 +2,7 @@ package task1.appliances;
 
 public class Microwave extends MajorAppliance {
 
-    private Double turntableSize;
+    private final Double turntableSize;
 
     public Microwave(Double turntableSize) {
         this.setAppliance("Microwave");

@@ -2,18 +2,11 @@ package task1.appliances;
 
 public class Microwave extends MajorAppliance {
 
-    private MicrowaveMode microwaveMode;
+    private Double turntableSize;
 
-    public Microwave() {
+    public Microwave(Double turntableSize) {
         this.setAppliance("Microwave");
-    }
-
-    public MicrowaveMode getMode() {
-        return microwaveMode;
-    }
-
-    public void setMode(MicrowaveMode microwaveMode) {
-        this.microwaveMode = microwaveMode;
+        this.turntableSize = turntableSize;
     }
 
     @Override
@@ -24,7 +17,7 @@ public class Microwave extends MajorAppliance {
                 ", power=" + getPower() +
                 ", switchedOn=" + isSwitchedOn() +
                 ", type='" + getType() + '\'' +
-                ", microwaveMode=" + microwaveMode +
+                ", turntableSize=" + turntableSize +
                 ", sourcePower=" + getSourcePower() +
                 '}';
     }

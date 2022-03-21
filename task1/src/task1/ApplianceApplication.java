@@ -7,46 +7,45 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class ApplianceApplication {
 
     public static void main(String[] args) {
 
         List<ElectricAppliance> appliances = new ArrayList<>();
 
-        Microwave microwave = new Microwave();
+        ElectricAppliance microwave = new Microwave(22.5);
         microwave.setId(1);
         microwave.setSwitchedOn(true);
         microwave.setPower(1500);
-        microwave.setMode(MicrowaveMode.DEFROST);
         appliances.add(microwave);
 
-        Kettle kettle = new Kettle(2.5, true);
+        ElectricAppliance kettle = new Kettle(2.5, true);
         kettle.setId(2);
         kettle.setPower(1200);
         kettle.setSwitchedOn(false);
         kettle.turnOn();
         appliances.add(kettle);
 
-        Dishwasher dishwasher = new Dishwasher(2.2);
+        ElectricAppliance dishwasher = new Dishwasher(2.2);
         dishwasher.setId(3);
         dishwasher.setPower(3500);
         dishwasher.setSwitchedOn(false);
         appliances.add(dishwasher);
 
-        AlarmClock alarmclock = new AlarmClock("Black");
+        ElectricAppliance alarmclock = new AlarmClock("Black");
         alarmclock.setId(4);
         alarmclock.setPower(5);
         alarmclock.setSwitchedOn(true);
         alarmclock.turnOff();
         appliances.add(alarmclock);
 
-        Fridge fridge = new Fridge(true);
+        ElectricAppliance fridge = new Fridge(true);
         fridge.setId(5);
         fridge.setPower(200);
         fridge.setSwitchedOn(true);
         appliances.add(fridge);
 
-        Lamp lamp = new Lamp();
+        ElectricAppliance lamp = new Lamp();
         lamp.setId(6);
         lamp.setPower(60);
         lamp.setSwitchedOn(false);
@@ -57,9 +56,10 @@ public class Main {
         for (ElectricAppliance appliance : appliances) {
             System.out.println(appliance);
         }
-        System.out.printf("Calculated power usage: %d Watt%n", (CalculateUsage.calculatePowerUsage(appliances)));
-        Collections.sort(appliances, new ElectricApplianceComparator());
 
+        System.out.printf("Calculated power usage: %d Watt%n", (Calculator.calculatePower(appliances)));
+
+        Collections.sort(appliances, new ElectricApplianceComparator());
         System.out.println("Appliances sorted by power:");
         for (ElectricAppliance appliance : appliances) {
             System.out.println(appliance);
@@ -70,7 +70,6 @@ public class Main {
         double minPower = scanner.nextDouble();
         double maxPower = scanner.nextDouble();
         scanner.close();
-
         System.out.println("Appliances in specified power range:");
         for (ElectricAppliance appliance : Filter.filterByPower(appliances, minPower, maxPower)) {
             System.out.println(appliance);

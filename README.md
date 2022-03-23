@@ -10,3 +10,8 @@ Create console application meeting the following requirements:
 * working with console or console menu should be minimal.
 * files can be used to store initialization parameters.
 
+### Task 2.
+Find a word in the first sentence that is not in any of the other sentences.
+
+Create a word processing application. Application must replace tabs and multiple spaces with a single space. Application have to process emails and phone numbers in +XXX(XX)XXX-XX-XX format as an individual words
+

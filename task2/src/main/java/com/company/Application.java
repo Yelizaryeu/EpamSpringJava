@@ -31,12 +31,6 @@ public class Application {
 
         Text text = new Text(page);
 
-        String phoneNumberRegEx = ("\\+\\d{3}(\\(\\d\\d\\))\\d((\\d\\d-){2})\\d\\d");
-        List<String> phoneNumbers = Finder.findSubstring(text.getText(), phoneNumberRegEx);
-
-        String mailRegEx = ("(\\w+)@(\\w+)\\.\\w{2,3}");
-        List<String> emails = Finder.findSubstring(text.getText(), mailRegEx);
-
         Path processedPagePath = Paths.get("src\\main\\java\\com\\company\\txtFiles\\processedPage.txt");
         try (BufferedWriter writer =
                      Files.newBufferedWriter(processedPagePath, StandardCharsets.UTF_8,
@@ -47,22 +41,39 @@ public class Application {
             e.printStackTrace();
         }
 
+        String phoneNumberRegEx = ("\\+\\d{3}(\\(\\d\\d\\))\\d((\\d\\d-){2})\\d\\d");
+        List<String> phoneNumbers = Finder.findSubstring(text.getText(), phoneNumberRegEx);
         Path foundedNumbersPath = Paths.get("src\\main\\java\\com\\company\\txtFiles\\foundedNumbers.txt");
         try (BufferedWriter writer =
                      Files.newBufferedWriter(foundedNumbersPath, StandardCharsets.UTF_8,
                              StandardOpenOption.WRITE)) {
             for (String phoneNumber : phoneNumbers)
-                writer.write(phoneNumber);
+                writer.write(phoneNumber + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        Path foundedEmails = Paths.get("src\\main\\java\\com\\company\\txtFiles\\foundedEmails.txt");
+        String mailRegEx = ("(\\w+)@(\\w+)\\.\\w{2,3}");
+        List<String> emails = Finder.findSubstring(text.getText(), mailRegEx);
+        Path foundedEmailsPath = Paths.get("src\\main\\java\\com\\company\\txtFiles\\foundedEmails.txt");
         try (BufferedWriter writer =
-                     Files.newBufferedWriter(foundedEmails, StandardCharsets.UTF_8,
+                     Files.newBufferedWriter(foundedEmailsPath, StandardCharsets.UTF_8,
                              StandardOpenOption.WRITE)) {
             for (String email : emails)
-                writer.write(email);
+                writer.write(email + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Path uniqueWordsPath = Paths.get("src\\main\\java\\com\\company\\txtFiles\\uniqueWords.txt");
+        String firstSentence = Sentence.getFirstSentence(text.getText());
+        List<String> firstSentenceWords = Sentence.getWords(firstSentence);
+        List<String> uniqueWords = Finder.findUniqueWords(firstSentenceWords, text.getText());
+        try (BufferedWriter writer =
+                     Files.newBufferedWriter(uniqueWordsPath, StandardCharsets.UTF_8,
+                             StandardOpenOption.WRITE)) {
+            for (String uniqueWord : uniqueWords)
+                writer.write(uniqueWord + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }

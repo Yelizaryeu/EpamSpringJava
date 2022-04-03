@@ -1,16 +1,14 @@
-package task1;
+package com.epam.MYelizaryeu.task1;
 
-import task1.appliances.*;
+import com.epam.MYelizaryeu.task1.appliances.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class ApplianceApplication {
 
     public static void main(String[] args) {
-
         List<ElectricAppliance> appliances = new ArrayList<>();
 
         ElectricAppliance microwave = new Microwave(22.5);
@@ -32,12 +30,12 @@ public class ApplianceApplication {
         dishwasher.setSwitchedOn(false);
         appliances.add(dishwasher);
 
-        ElectricAppliance alarmclock = new AlarmClock("Black");
-        alarmclock.setId(4);
-        alarmclock.setPower(5);
-        alarmclock.setSwitchedOn(true);
-        alarmclock.turnOff();
-        appliances.add(alarmclock);
+        ElectricAppliance alarmClock = new AlarmClock("Black");
+        alarmClock.setId(4);
+        alarmClock.setPower(5);
+        alarmClock.setSwitchedOn(true);
+        alarmClock.turnOff();
+        appliances.add(alarmClock);
 
         ElectricAppliance fridge = new Fridge(true);
         fridge.setId(5);
@@ -57,9 +55,9 @@ public class ApplianceApplication {
             System.out.println(appliance);
         }
 
-        System.out.printf("Calculated power usage: %d Watt%n", (Calculator.calculatePower(appliances)));
+        System.out.printf("Calculated power usage: %d Watt%n", Calculator.calculatePower(appliances));
 
-        Collections.sort(appliances, new ElectricApplianceComparator());
+        appliances.sort(new ElectricApplianceComparator());
         System.out.println("Appliances sorted by power:");
         for (ElectricAppliance appliance : appliances) {
             System.out.println(appliance);

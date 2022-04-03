@@ -1,4 +1,4 @@
-package task1.appliances;
+package com.epam.MYelizaryeu.task1.appliances;
 
 abstract public class ElectricAppliance {
 
@@ -52,7 +52,7 @@ abstract public class ElectricAppliance {
         this.switchedOn = switchedOn;
     }
 
-    public abstract SourcePower getSourcePower();
+    public abstract PowerSource getPowerSource();
 
     public String getType() {
         return type;

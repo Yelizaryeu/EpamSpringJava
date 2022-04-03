@@ -1,4 +1,4 @@
-package task1.appliances;
+package com.epam.MYelizaryeu.task1.appliances;
 
 public class AlarmClock extends SmallAppliance {
 
@@ -10,8 +10,8 @@ public class AlarmClock extends SmallAppliance {
     }
 
     @Override
-    public SourcePower getSourcePower() {
-        return SourcePower.BATTERY;
+    public PowerSource getPowerSource() {
+        return PowerSource.BATTERY;
     }
 
     public String getColor() {
@@ -27,7 +27,7 @@ public class AlarmClock extends SmallAppliance {
                 ", switchedOn=" + isSwitchedOn() +
                 ", type='" + getType() + '\'' +
                 "color='" + color + '\'' +
-                ", sourcePower=" + getSourcePower() +
+                ", sourcePower=" + getPowerSource() +
                 '}';
     }
 }

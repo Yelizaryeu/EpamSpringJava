@@ -1,4 +1,4 @@
-package task1.appliances;
+package com.epam.MYelizaryeu.task1.appliances;
 
 public class Fridge extends MajorAppliance {
 
@@ -22,7 +22,7 @@ public class Fridge extends MajorAppliance {
                 ", switchedOn=" + isSwitchedOn() +
                 ", type='" + getType() + '\'' +
                 ", hasFreezer=" + hasFreezer +
-                ", sourcePower=" + getSourcePower() +
+                ", sourcePower=" + getPowerSource() +
                 '}';
     }
 }

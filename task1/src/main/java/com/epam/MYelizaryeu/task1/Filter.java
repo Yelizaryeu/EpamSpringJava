@@ -1,13 +1,13 @@
-package task1;
+package com.epam.MYelizaryeu.task1;
 
-import task1.appliances.ElectricAppliance;
+import com.epam.MYelizaryeu.task1.appliances.ElectricAppliance;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Filter {
 
-    private Filter(){};
+    private Filter(){}
 
     public static List<ElectricAppliance> filterByPower(List<ElectricAppliance> appliances, double minPower, double maxPower) {
         List<ElectricAppliance> result = new ArrayList<>();

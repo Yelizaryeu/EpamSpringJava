@@ -1,4 +1,4 @@
-package task1.appliances;
+package com.epam.MYelizaryeu.task1.appliances;
 
 abstract class MajorAppliance extends ElectricAppliance {
 
@@ -7,7 +7,7 @@ abstract class MajorAppliance extends ElectricAppliance {
     }
 
     @Override
-    public SourcePower getSourcePower() {
-        return SourcePower.PLUG;
+    public PowerSource getPowerSource() {
+        return PowerSource.PLUG;
     }
 }

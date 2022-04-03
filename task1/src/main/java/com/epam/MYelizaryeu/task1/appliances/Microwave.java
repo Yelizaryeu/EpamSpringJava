@@ -1,4 +1,4 @@
-package task1.appliances;
+package com.epam.MYelizaryeu.task1.appliances;
 
 public class Microwave extends MajorAppliance {
 
@@ -18,7 +18,7 @@ public class Microwave extends MajorAppliance {
                 ", switchedOn=" + isSwitchedOn() +
                 ", type='" + getType() + '\'' +
                 ", turntableSize=" + turntableSize +
-                ", sourcePower=" + getSourcePower() +
+                ", sourcePower=" + getPowerSource() +
                 '}';
     }
 }

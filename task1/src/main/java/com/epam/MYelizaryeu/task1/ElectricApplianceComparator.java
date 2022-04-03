@@ -1,6 +1,6 @@
-package task1;
+package com.epam.MYelizaryeu.task1;
 
-import task1.appliances.ElectricAppliance;
+import com.epam.MYelizaryeu.task1.appliances.ElectricAppliance;
 
 import java.util.Comparator;
 

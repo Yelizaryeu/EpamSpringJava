@@ -4,6 +4,5 @@ task1.iml
 .classpath
 .project
 .settings/
-target/
 test/
 /resources

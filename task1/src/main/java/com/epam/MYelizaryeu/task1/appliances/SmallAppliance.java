@@ -1,4 +1,4 @@
-package task1.appliances;
+package com.epam.MYelizaryeu.task1.appliances;
 
 abstract class SmallAppliance extends ElectricAppliance {
 

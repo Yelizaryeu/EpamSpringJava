@@ -1,4 +1,4 @@
-package task1.appliances;
+package com.epam.MYelizaryeu.task1.appliances;
 
 public class Dishwasher extends MajorAppliance {
 
@@ -22,7 +22,7 @@ public class Dishwasher extends MajorAppliance {
                 ", switchedOn=" + isSwitchedOn() +
                 ", type='" + getType() + '\'' +
                 "operationVolume=" + operationVolume +
-                ", sourcePower=" + getSourcePower() +
+                ", sourcePower=" + getPowerSource() +
                 '}';
     }
 }

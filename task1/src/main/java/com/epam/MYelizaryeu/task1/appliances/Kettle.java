@@ -1,4 +1,4 @@
-package task1.appliances;
+package com.epam.MYelizaryeu.task1.appliances;
 
 public class Kettle extends SmallAppliance {
 
@@ -12,8 +12,8 @@ public class Kettle extends SmallAppliance {
     }
 
     @Override
-    public SourcePower getSourcePower() {
-        return SourcePower.PLUG;
+    public PowerSource getPowerSource() {
+        return PowerSource.PLUG;
     }
 
     public double getCapacity() {
@@ -34,7 +34,7 @@ public class Kettle extends SmallAppliance {
                 ", type='" + getType() + '\'' +
                 ", capacity=" + capacity +
                 ", hasBacklight=" + hasBacklight +
-                ", sourcePower=" + getSourcePower() +
+                ", sourcePower=" + getPowerSource() +
                 '}';
     }
 }

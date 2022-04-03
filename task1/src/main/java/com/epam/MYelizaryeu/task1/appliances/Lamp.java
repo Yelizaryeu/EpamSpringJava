@@ -1,4 +1,4 @@
-package task1.appliances;
+package com.epam.MYelizaryeu.task1.appliances;
 
 public class Lamp extends SmallAppliance {
 
@@ -9,8 +9,8 @@ public class Lamp extends SmallAppliance {
     }
 
     @Override
-    public SourcePower getSourcePower() {
-        return SourcePower.BATTERY;
+    public PowerSource getPowerSource() {
+        return PowerSource.BATTERY;
     }
 
     public int getBrightness() {
@@ -21,7 +21,7 @@ public class Lamp extends SmallAppliance {
         if (brightness >= 0 && brightness <= 100) {
             this.brightness = brightness;
         } else {
-            brightness = 0;
+            throw new IllegalArgumentException("Wrong brightness: " + brightness);
         }
     }
 
@@ -34,7 +34,7 @@ public class Lamp extends SmallAppliance {
                 ", switchedOn=" + isSwitchedOn() +
                 ", type='" + getType() + '\'' +
                 ", brightness=" + brightness +
-                ", sourcePower=" + getSourcePower() +
+                ", sourcePower=" + getPowerSource() +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
-package com.company;
+package com.epam.MYelizaryeu.task2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class Sentence {
         StringBuilder stringText = new StringBuilder();
         for (String s : text) {
             stringText.append(s);
-            stringText.append("\s");
+            stringText.append(" ");
         }
 
         Pattern pattern = Pattern.compile("[^?!.]+[.!?]\\s+");
@@ -30,10 +30,10 @@ public class Sentence {
     public static List<String> getWords(String sentence) {
 
         List<String> result = new ArrayList<>();
-        Pattern pattern = Pattern.compile("[А-Яа-я]*[.!?]*\\s+");
+        Pattern pattern = Pattern.compile("[А-Яа-яA-Za-z.-]*[,.!?]*\\s+");
         Matcher matcher = pattern.matcher(sentence);
         while (matcher.find()) {
-            result.add(matcher.group().replaceAll("[.!?]", ""));
+            result.add(matcher.group().replaceAll("[,.!?]", ""));
         }
         return result;
     }

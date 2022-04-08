@@ -1,4 +1,4 @@
-package com.company.finder;
+package com.epam.MYelizaryeu.task2.finder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class Finder {
             int numberOfAppearances = 0;
             Pattern pattern = Pattern.compile(words.get(i).replaceAll(" ", "") + "[.!?\\s]+");
             for (String line : text) {
-                Matcher matcher = pattern.matcher(line + "\s");
+                Matcher matcher = pattern.matcher(line + " ");
                 while (matcher.find()) {
                     numberOfAppearances++;
                 }

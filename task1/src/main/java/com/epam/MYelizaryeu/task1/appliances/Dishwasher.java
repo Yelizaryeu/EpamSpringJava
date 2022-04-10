@@ -1,11 +1,11 @@
-package com.epam.MYelizaryeu.task1.appliances;
+package com.epam.myelizaryeu.task1.appliances;
 
 public class Dishwasher extends MajorAppliance {
 
     private final double operationVolume;
 
     public Dishwasher(double operationVolume) {
-        this.setAppliance("Dishwasher");
+        this.setName("Dishwasher");
         this.operationVolume = operationVolume;
     }
 

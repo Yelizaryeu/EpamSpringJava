@@ -1,6 +1,6 @@
-package com.epam.MYelizaryeu.task1.appliances;
+package com.epam.myelizaryeu.task1.appliances;
 
 public enum PowerSource {
     PLUG,
-    BATTERY;
+    BATTERY
 }

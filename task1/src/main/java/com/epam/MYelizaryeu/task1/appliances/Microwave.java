@@ -1,11 +1,11 @@
-package com.epam.MYelizaryeu.task1.appliances;
+package com.epam.myelizaryeu.task1.appliances;
 
 public class Microwave extends MajorAppliance {
 
     private final Double turntableSize;
 
     public Microwave(Double turntableSize) {
-        this.setAppliance("Microwave");
+        this.setName("Microwave");
         this.turntableSize = turntableSize;
     }
 

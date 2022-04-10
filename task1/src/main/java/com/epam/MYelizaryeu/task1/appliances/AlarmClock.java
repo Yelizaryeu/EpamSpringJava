@@ -1,11 +1,11 @@
-package com.epam.MYelizaryeu.task1.appliances;
+package com.epam.myelizaryeu.task1.appliances;
 
 public class AlarmClock extends SmallAppliance {
 
     private final String color;
 
     public AlarmClock(String color) {
-        this.setAppliance("Alarm clock");
+        this.setName("Alarm clock");
         this.color = color;
     }
 

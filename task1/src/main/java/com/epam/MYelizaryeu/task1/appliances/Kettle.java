@@ -1,4 +1,4 @@
-package com.epam.MYelizaryeu.task1.appliances;
+package com.epam.myelizaryeu.task1.appliances;
 
 public class Kettle extends SmallAppliance {
 
@@ -6,7 +6,7 @@ public class Kettle extends SmallAppliance {
     private final boolean hasBacklight;
 
     public Kettle(double capacity, boolean hasBacklight) {
-        this.setAppliance("Kettle");
+        this.setName("Kettle");
         this.capacity = capacity;
         this.hasBacklight = hasBacklight;
     }

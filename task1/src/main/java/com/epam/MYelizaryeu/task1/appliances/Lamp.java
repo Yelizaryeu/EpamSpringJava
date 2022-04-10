@@ -1,11 +1,11 @@
-package com.epam.MYelizaryeu.task1.appliances;
+package com.epam.myelizaryeu.task1.appliances;
 
 public class Lamp extends SmallAppliance {
 
     private int brightness;
 
     public Lamp() {
-        this.setAppliance("Lamp");
+        this.setName("Lamp");
     }
 
     @Override

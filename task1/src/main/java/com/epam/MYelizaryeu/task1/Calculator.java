@@ -1,11 +1,13 @@
-package com.epam.MYelizaryeu.task1;
+package com.epam.myelizaryeu.task1;
 
-import com.epam.MYelizaryeu.task1.appliances.ElectricAppliance;
+import com.epam.myelizaryeu.task1.appliances.ElectricAppliance;
+
 import java.util.List;
 
-public class Calculator {
+public final class Calculator {
 
-    private Calculator(){};
+    private Calculator() {
+    }
 
     public static int calculatePower(List<ElectricAppliance> appliances) {
         int result = 0;

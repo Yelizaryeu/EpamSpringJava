@@ -1,10 +1,10 @@
-package com.epam.MYelizaryeu.task1.appliances;
+package com.epam.myelizaryeu.task1.appliances;
 
 abstract public class ElectricAppliance {
 
     private String name;
     private int id;
-    private String type;
+    private final String type;
     private int power;
     private boolean switchedOn;
 
@@ -12,11 +12,13 @@ abstract public class ElectricAppliance {
         this.type = type;
     }
 
+    public abstract PowerSource getPowerSource();
+
     public String getName() {
         return name;
     }
 
-    public void setAppliance(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -28,12 +30,8 @@ abstract public class ElectricAppliance {
         this.id = id;
     }
 
-    public void turnOn() {
-        this.setSwitchedOn(true);
-    }
-
-    public void turnOff() {
-        this.setSwitchedOn(false);
+    public String getType() {
+        return type;
     }
 
     public int getPower() {
@@ -50,12 +48,6 @@ abstract public class ElectricAppliance {
 
     public void setSwitchedOn(boolean switchedOn) {
         this.switchedOn = switchedOn;
-    }
-
-    public abstract PowerSource getPowerSource();
-
-    public String getType() {
-        return type;
     }
 
     @Override

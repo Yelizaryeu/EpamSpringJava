@@ -1,11 +1,11 @@
-package com.epam.MYelizaryeu.task1.appliances;
+package com.epam.myelizaryeu.task1.appliances;
 
 public class Fridge extends MajorAppliance {
 
     private final boolean hasFreezer;
 
     public Fridge(boolean hasFreezer) {
-        this.setAppliance("Fridge");
+        this.setName("Fridge");
         this.hasFreezer = hasFreezer;
     }
 

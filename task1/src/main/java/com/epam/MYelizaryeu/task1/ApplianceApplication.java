@@ -1,6 +1,6 @@
-package com.epam.MYelizaryeu.task1;
+package com.epam.myelizaryeu.task1;
 
-import com.epam.MYelizaryeu.task1.appliances.*;
+import com.epam.myelizaryeu.task1.appliances.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +20,7 @@ public class ApplianceApplication {
         ElectricAppliance kettle = new Kettle(2.5, true);
         kettle.setId(2);
         kettle.setPower(1200);
-        kettle.setSwitchedOn(false);
-        kettle.turnOn();
+        kettle.setSwitchedOn(true);
         appliances.add(kettle);
 
         ElectricAppliance dishwasher = new Dishwasher(2.2);
@@ -33,8 +32,7 @@ public class ApplianceApplication {
         ElectricAppliance alarmClock = new AlarmClock("Black");
         alarmClock.setId(4);
         alarmClock.setPower(5);
-        alarmClock.setSwitchedOn(true);
-        alarmClock.turnOff();
+        alarmClock.setSwitchedOn(false);
         appliances.add(alarmClock);
 
         ElectricAppliance fridge = new Fridge(true);
@@ -46,8 +44,7 @@ public class ApplianceApplication {
         ElectricAppliance lamp = new Lamp();
         lamp.setId(6);
         lamp.setPower(60);
-        lamp.setSwitchedOn(false);
-        lamp.turnOn();
+        lamp.setSwitchedOn(true);
         appliances.add(lamp);
 
         System.out.println("Available appliances:");

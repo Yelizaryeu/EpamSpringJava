@@ -1,4 +1,6 @@
-package com.epam.MYelizaryeu.task2.finder;
+package com.epam.myelizaryeu.task2.finder;
+
+import com.epam.myelizaryeu.task2.elements.Word;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,6 @@ public class Finder {
     }
 
     public static List<String> findSubstring(List<String> page, String RegEx) {
-
         List<String> result = new ArrayList<>();
         Pattern pattern = Pattern.compile(RegEx);
         for (String line : page) {
@@ -23,13 +24,15 @@ public class Finder {
         return result;
     }
 
-    public static List<String> findUniqueWords(List<String> words, List<String> text) {
-
-        List<String> result = words;
+    public static List<Word> findUniqueWords(List<Word> words, List<String> text) {
+        List<Word> result = words;
 
         for (int i = result.size() - 1; i >= 0; i--) {
+            Pattern pattern;
             int numberOfAppearances = 0;
-            Pattern pattern = Pattern.compile(words.get(i).replaceAll(" ", "") + "[.!?\\s]+");
+            if (words.get(i).getWord().charAt(0) != '+') {
+                pattern = Pattern.compile(words.get(i).getWord() + "[.!?\\s]+");
+            } else pattern = Pattern.compile(("\\+" + words.get(i).getWord().replaceAll("\\+", "") + "[.!?\\s]+"));
             for (String line : text) {
                 Matcher matcher = pattern.matcher(line + " ");
                 while (matcher.find()) {

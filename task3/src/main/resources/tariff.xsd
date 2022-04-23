@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.myelizaryeu.epam.com/tariffs"
+        elementFormDefault="qualified">
+    <element name="tariffs">
+        <complexType>
+            <sequence>
+                <element name="tariff" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="name" type="string"/>
+                            <element name="operator-name" type="string"/>
+                            <element name="payroll" type="double"/>
+                            <element name="sms-price" type="double"/>
+                            <element name="call-prices">
+                                <complexType>
+                                    <sequence>
+                                        <element name="within" type="double"/>
+                                        <element name="offline" type="double"/>
+                                        <element name="station" type="double"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="parameters">
+                                <complexType>
+                                    <sequence>
+                                        <element name="favorite-numbers">
+                                            <simpleType>
+                                                <restriction base="int">
+                                                    <minInclusive value="0"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="billing">
+                                            <simpleType>
+                                                <restriction base="string">
+                                                    <enumeration value="MINUTE"/>
+                                                    <enumeration value="SECONDS"/>
+                                                    <enumeration value="TWELVE_SECONDS"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="connection-fee" type="double"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                        <attribute name="id" type="ID" use="required"/>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

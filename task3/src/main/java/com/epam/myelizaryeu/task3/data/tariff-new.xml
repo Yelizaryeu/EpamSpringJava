@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tariffs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://www.myelizaryeu.epam.com/tariffs" xsi:schemaLocation="http://www.myelizaryeu.epam.com/tariffs tariff.xsd">
+	<tariff id="t3">
+		<name>Affordable</name>
+		<operator-name>Life</operator-name>
+		<payroll>5.0</payroll>
+		<sms-price>0.005</sms-price>
+		<call-prices>
+			<within>0.05</within>
+			<offline>0.5</offline>
+			<station>2.0</station></call-prices>
+		<parameters>
+			<favorite-numbers>10</favorite-numbers>
+			<billing>SECONDS</billing>
+			<connection-fee>0.0</connection-fee>
+		</parameters>
+	</tariff>
+	<tariff id="t1">
+		<name>Student</name>
+		<operator-name>A1</operator-name>
+		<payroll>10.8</payroll>
+		<sms-price>0.05</sms-price>
+		<call-prices>
+			<within>0.0</within>
+			<offline>0.5</offline>
+			<station>1.0</station></call-prices>
+		<parameters>
+			<favorite-numbers>5</favorite-numbers>
+			<billing>MINUTE</billing>
+			<connection-fee>0.0</connection-fee>
+		</parameters>
+	</tariff>
+	<tariff id="t2">
+		<name>Unlimited</name>
+		<operator-name>MTS</operator-name>
+		<payroll>22.4</payroll>
+		<sms-price>0.001</sms-price>
+		<call-prices>
+			<within>0.0</within>
+			<offline>0.005</offline>
+			<station>0.05</station></call-prices>
+		<parameters>
+			<favorite-numbers>0</favorite-numbers>
+			<billing>TWELVE_SECONDS</billing>
+			<connection-fee>5.0</connection-fee>
+		</parameters>
+	</tariff>
+</tariffs>
